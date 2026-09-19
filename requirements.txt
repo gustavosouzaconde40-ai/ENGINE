@@ -1,0 +1,7 @@
+numpy
+scipy
+pandas
+numba
+matplotlib
+astropy
+pytest
