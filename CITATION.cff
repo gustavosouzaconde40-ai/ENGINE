@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: ENGINE - Emulator of New Generation for Expansion
+type: software
+authors:
+    - family-names: "Alves Conde"
+    given-names: "Gustavo"
+    affiliation: "ENGINE Labs"
+repository-code: "https://github.com/gustavosouzaconde40-ai/ENGINE"
+license: MIT
+version: 0.3.4
