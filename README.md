@@ -1,38 +1,33 @@
-# ENGINE
+# ENGINE – Emulator of New Generation for Expansion
 
-**Open-source phenomenological emulator for active vacuum contributions to cosmic dynamics**
+Phenomenological computational framework for active vacuum contributions (Aeternvm Vacvvm).
 
-ENGINE is a lightweight computational emulator designed to explore controlled phenomenological extensions to the standard cosmological model. It implements a parametric effective term and allows fast, transparent numerical experiments against public datasets.
+**Paper:** MNRAS Submission - Manuscript ID Draft
+**Author:** Gustavo Alves Conde, ENGINE Labs (PIC 861720453)
+**TRL:** 3-4 (target TRL 6)
+**License:** MIT
 
-> This project is an **emulator / exploratory tool**. It is **not** proposed as a replacement for ΛCDM.
+### Model
+Lambda_eff(Z0, ∇I) = Z0 f(|∇I|)
+I = log(1 + rho/rho0) [Conde Ruler]
+Conde Triangle mapping for vacuum contribution.
 
-## Features
-
-- Phenomenological effective term with clear recovery of ΛCDM limit
-- Interfaces for public datasets (SPARC rotation curves, Pantheon+, JWST CEERS candidates)
-- Hybrid Python implementation (Numba-accelerated kernels)
-- Fully open-source and reproducible
-
-## Installation
-
-git clone https://github.com/gustavosouzaconde40-ai/ENGINE.git
-cd ENGINE
-pip install -e .
-
-## Quick start
-
+### Quick start for MNRAS reviewers (60s)
+pip install -e.
 python examples/basic_run.py
 
-## Current status
+### Data
+Public catalogs only - user must download:
+- SPARC (Lelli et al 2016)
+- JWST CEERS public
+- Pantheon+ + BAO
+See docs/data.md
 
-- Technology Readiness Level (TRL): 3–4
-- Code and documentation under active development
-- Aimed at becoming a community-usable tool (target TRL 6)
+### Structure
+engine/core/ -> Conde Ruler & Triangle
+engine/cosmology/ -> background.py
+engine/data/ -> loaders
+examples/ -> reproducible figures
+tests/ -> pytest
 
-## Citation
-
-If you use this software, please cite the repository and any associated Zenodo records.
-
-## License
-
-MIT License
+Code, notebooks and Zenodo records: https://github.com/gustavosouzaconde40-ai/ENGINE
