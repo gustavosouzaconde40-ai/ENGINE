@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22849189.svg)](https://doi.org/10.5281/zenodo.22849189)
 # ENGINE – Emulator of New Generation for Expansion
 
 Phenomenological computational framework for active vacuum contributions (Aeternvm Vacvvm).
