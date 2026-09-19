@@ -25,6 +25,7 @@ Researchers need fast, transparent tools to test vacuum phenomenology for SPARC,
 ```bash
 pip install -e .
 python examples/basic_run.py
+```
 # State of the field
 
 Boltzmann solvers like CLASS/CAMB are accurate but heavy for phenomenological vacuum tests. ENGINE is complementary: a minimal, explainable mapping $I$ and $\nabla I \rightarrow \Lambda_{\rm eff}$.
