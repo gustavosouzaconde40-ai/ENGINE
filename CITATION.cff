@@ -1,10 +1,18 @@
 cff-version: 1.2.0
-title: ENGINE - Emulator of New Generation for Expansion
+title: "ENGINE - Emulator of New Generation for Expansion"
+message: "If you use this software, please cite it as below."
 type: software
 authors:
     - family-names: "Alves Conde"
     given-names: "Gustavo"
     affiliation: "ENGINE Labs"
 repository-code: "https://github.com/gustavosouzaconde40-ai/ENGINE"
+url: "https://github.com/gustavosouzaconde40-ai/ENGINE"
 license: MIT
 version: 0.3.4
+date-released: 2026-09-19
+keywords:
+    - cosmology
+    - dark energy
+    - emulator
+    - SPARC
