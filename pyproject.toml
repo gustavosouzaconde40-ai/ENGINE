@@ -1,0 +1,12 @@
+[project]
+name = "ENGINE"
+version = "0.3.4"
+description = "Emulator of New Generation for Expansion - phenomenological framework"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name="Gustavo Alves Conde", email="gustavo.engine.labs@gmail.com"}]
+dependencies = ["numpy","scipy","pandas","numba","matplotlib","astropy"]
+
+[project.urls]
+Repository = "https://github.com/gustavosouzaconde40-ai/ENGINE"
