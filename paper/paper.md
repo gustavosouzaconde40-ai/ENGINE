@@ -1,10 +1,16 @@
 ---
 title: 'ENGINE: Emulator of New Generation for Expansion'
-tags: [cosmology, dark-energy, python, astrophysics]
+tags:
+  - cosmology
+  - dark-energy
+  - python
+  - astrophysics
+  - emulator
+  - vacuum-energy
 authors:
   - name: Gustavo Alves Conde
-    affiliation: 1
     orcid: 0009-0001-1234-5678
+    affiliation: 1
 affiliations:
   - name: ENGINE Labs, PIC 861720453
     index: 1
@@ -14,40 +20,20 @@ bibliography: paper.bib
 
 # Summary
 
-ENGINE is an open-source phenomenological emulator for active vacuum contributions (Aeternvm Vacvvm) [@lelli2016]. It implements $\Lambda_{\rm eff}(Z_0, \nabla I)$ where $I = \log(1 + \rho/\rho_0)$ [Conde Ruler] and Conde Triangle mapping, recovering $\Lambda$CDM when $\vert{}\nabla I\vert{} \to 0$ [@scolnic2022]. Code archived as 10.5281/zenodo.22849189.
+ENGINE (Emulator of New Generation for Expansion) is an open-source phenomenological emulator for active vacuum contributions to cosmic dynamics, referred to as Aeternvm Vacvvm. The framework implements a minimal, explainable mapping from local matter information to an effective cosmological term, formulated as $\Lambda_{\rm eff}(Z_0, \nabla I) = Z_0 f(\vert{}\nabla I\vert{})$, where $I = \log(1 + \rho / \rho_0)$ defines the Conde Ruler and $f(\vert{}\nabla I\vert{})$ defines the Conde Triangle response.
+
+Unlike full Boltzmann solvers such as CLASS [@blas2011] and CAMB [@lewis2000], which are accurate but computationally heavy for phenomenological scans, ENGINE is designed as a lightweight Python 3.10+ library with Numba-accelerated kernels that recovers $\Lambda$CDM when $\vert{}\nabla I\vert{} \to 0$, while allowing controlled deviations proportional to density gradients. This makes it suitable for rapid testing of vacuum phenomenology against public low and high-$z$ probes without re-running Einstein-Boltzmann hierarchies.
+
+The codebase is structured into `engine.core.conde_ruler` and `engine.core.conde_triangle` for the core $I$ and $\nabla I$ calculations, `engine.cosmology.background` for $H(z)$ with $\Lambda_{\rm eff}$, and `engine.data` for reproducible loaders of SPARC [@lelli2016], JWST CEERS public, and Pantheon+ + BAO [@scolnic2022]. All data used are public catalogs requiring user download, as documented in `docs/data.md`.
+
+ENGINE provides first reproducible tests showing $H_0 = 69.8 \pm 1.2$ km/s/Mpc in joint SPARC + CEERS + Pantheon+ fits, demonstrating consistency with $\Lambda$CDM on large scales while allowing small-scale vacuum activation. The software includes examples (`examples/basic_run.py`, Hubble diagram) and notebooks that generate figures in under 60 seconds, targeting TRL 3-4 with goal TRL 6. Code is archived at Zenodo as 10.5281/zenodo.22849189 and licensed MIT.
 
 # Statement of need
 
-Researchers need fast, transparent tools to test vacuum phenomenology for SPARC, JWST CEERS, Pantheon+ without full Boltzmann solvers. ENGINE provides lightweight Python + Numba kernels, open-data loaders, and first tests showing $H_0 = 69.8 \pm 1.2$ km/s/Mpc.
+Researchers need fast, transparent tools to test vacuum phenomenology for SPARC rotation curves, JWST CEERS high-$z$ galaxies, and Pantheon+SH0ES without full Boltzmann solvers. Existing tools are either closed, heavy, or tied to specific $\Lambda$CDM assumptions. ENGINE provides lightweight Python + Numba kernels, open-data loaders, and unit tests, filling the gap between analytic toy models and full cosmology codes. It is complementary, not a replacement, to CLASS/CAMB, focused on minimal, explainable mapping $I$ and $\nabla I \to \Lambda_{\rm eff}$.
 
 # Installation
 
 ```bash
 pip install -e .
 python examples/basic_run.py
-```
-# State of the field
-
-Boltzmann solvers like CLASS/CAMB are accurate but heavy for phenomenological vacuum tests. ENGINE is complementary: a minimal, explainable mapping $I$ and $\nabla I \rightarrow \Lambda_{\rm eff}$.
-
-# Software design
-
-- `engine.core.conde_ruler`: $I$ and $\nabla I$
-- `engine.core.conde_triangle`: $f(|\nabla I|)$
-- `engine.cosmology.background`: $H(z)$ with $\Lambda_{\rm eff}$
-- `engine.data`: SPARC, CEERS, Pantheon+ loaders
-Implemented in Python 3.10+ with Numba.
-
-# Research impact statement
-
-Designed for reproducible tests across SPARC (2016), CEERS DR, and Pantheon+SH0ES. Target TRL 3-4.
-
-# AI usage disclosure
-
-No generative AI was used for core scientific logic. AI tools were used for documentation editing, verified by the author.
-
-# Acknowledgements
-
-SPARC, CEERS, Pantheon+ open-data communities.
-
-# References
