@@ -25,18 +25,3 @@ Researchers need fast, transparent tools to test vacuum phenomenology for SPARC,
 ```bash
 pip install -e .
 python examples/basic_run.py
----
-
-### 2. Métodos para Converter para PDF
-
-#### Método A: Pelo Navegador (Sem instalar software adicional)
-1. Abra o ficheiro `.html` original em qualquer navegador (Chrome, Firefox, Edge, Safari).
-2. Pressione `Ctrl + P` (Windows/Linux) ou `Cmd + P` (macOS).
-3. No destino da impressora, selecione **"Guardar como PDF"**.
-4. Ajuste as margens se necessário e clique em **Guardar**.
-
-#### Método B: Via Pandoc (Formatação Académica / JOSS)
-Se pretender gerar o PDF com o modelo oficial de publicação científica, utilize o **Pandoc** no terminal:
-
-```bash
-pandoc paper.md -o paper.pdf --pdf-engine=xelatex
