@@ -2,8 +2,8 @@
 title: 'ENGINE: Emulator of New Generation for Expansion'
 tags: [cosmology, dark-energy, python, astrophysics]
 authors:
-name: Gustavo Alves Conde
-    affiliation: 1
+    - name: Gustavo Alves Conde
+        affiliation: 1
     orcid: 0009-0001-1234-5678
 affiliations:
 name: ENGINE Labs, PIC 861720453
