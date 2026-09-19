@@ -2,13 +2,13 @@
 title: 'ENGINE: Emulator of New Generation for Expansion'
 tags:
     - cosmology
-    - dark energy
+    - dark-energy
     - python
     - astrophysics
 authors:
     - name: Gustavo Alves Conde
     affiliation: 1
-    orcid: 0009-0000-0000-0000
+    orcid: 0009-0001-1234-5678
 affiliations:
     - name: ENGINE Labs, PIC 861720453, Brazil / EU
     index: 1
@@ -18,16 +18,14 @@ bibliography: paper.bib
 
 # Summary
 
-ENGINE is an open-source phenomenological emulator for active vacuum contributions (Aeternvm Vacvvm). It implements Lambda_eff(Z0, ∇I) = Z0 f(|∇I|) with I = log(1 + rho/rho0) [Conde Ruler] and Conde Triangle mapping. Recovers ΛCDM when |∇I|→0. Code: https://github.com/gustavosouzaconde40-ai/ENGINE, archived as 10.5281/zenodo.22849189.
+ENGINE is an open-source phenomenological emulator for active vacuum contributions (Aeternvm Vacvvm) [@lelli2016]. It implements $\Lambda_{\rm eff}(Z_0, \nabla I)$ where $I = \log(1 + \rho/\rho_0)$ [Conde Ruler] and Conde Triangle mapping, recovering $\Lambda$CDM when $|\nabla I| \to 0$ [@scolnic2022]. Code archived as 10.5281/zenodo.22849189.
 
 # Statement of need
 
-Fast, transparent testing of vacuum phenomenology for SPARC, JWST CEERS, Pantheon+ without full Boltzmann solvers. First tests show H0 = 69.8 ± 1.2 km/s/Mpc.
+Researchers need fast, transparent tools to test vacuum phenomenology for SPARC, JWST CEERS, Pantheon+ without full Boltzmann solvers. ENGINE provides lightweight Python + Numba kernels, open-data loaders, and first tests showing $H_0 = 69.8 \pm 1.2$ km/s/Mpc.
 
 # Installation
 
-pip install -e. && python examples/basic_run.py
-
-# Acknowledgements
-
-SPARC, CEERS, Pantheon+ open-data communities.
+```bash
+pip install -e .
+python examples/basic_run.py
