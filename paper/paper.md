@@ -1,16 +1,12 @@
 ---
 title: 'ENGINE: Emulator of New Generation for Expansion'
-tags:
-    - cosmology
-    - dark-energy
-    - python
-    - astrophysics
+tags: [cosmology, dark-energy, python, astrophysics]
 authors:
     - name: Gustavo Alves Conde
     affiliation: 1
     orcid: 0009-0001-1234-5678
 affiliations:
-    - name: ENGINE Labs, PIC 861720453, Brazil / EU
+    - name: ENGINE Labs, PIC 861720453
     index: 1
 date: 19 September 2026
 bibliography: paper.bib
@@ -29,3 +25,15 @@ Researchers need fast, transparent tools to test vacuum phenomenology for SPARC,
 ```bash
 pip install -e .
 python examples/basic_run.py
+# Functionality
+
+- `engine.core.conde_ruler`: $I$ and $\nabla I$
+- `engine.core.conde_triangle`: $f(|\nabla I|)$
+- `engine.cosmology.background`: $H(z)$ with $\Lambda_{\rm eff}$
+- `engine.data`: SPARC, CEERS, Pantheon+ loaders
+
+# Acknowledgements
+
+SPARC, CEERS, Pantheon+ open-data communities.
+
+# References
