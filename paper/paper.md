@@ -1,16 +1,12 @@
 ---
 title: 'ENGINE: Emulator of New Generation for Expansion'
-tags:
-    - cosmology
-    - dark-energy
-    - python
-    - astrophysics
+tags: [cosmology, dark-energy, python, astrophysics]
 authors:
-    - name: Gustavo Alves Conde
+  - name: Gustavo Alves Conde
     affiliation: 1
     orcid: 0009-0001-1234-5678
 affiliations:
-    - name: ENGINE Labs, PIC 861720453
+  - name: ENGINE Labs, PIC 861720453
     index: 1
 date: 19 September 2026
 bibliography: paper.bib
@@ -18,35 +14,29 @@ bibliography: paper.bib
 
 # Summary
 
-ENGINE is an open-source phenomenological emulator for active vacuum contributions (Aeternvm Vacvvm) [@lelli2016]. It implements $\Lambda_{\rm eff}(Z_0, \nabla I)$ where $I = \log(1 + \rho/\rho_0)$ [Conde Ruler] and Conde Triangle mapping, recovering $\Lambda$CDM when $|\nabla I| \to 0$ [@scolnic2022]. Code archived as 10.5281/zenodo.22849189.
+ENGINE is an open-source phenomenological emulator for active vacuum contributions (Aeternvm Vacvvm) [@lelli2016]. It implements $\Lambda_{\rm eff}(Z_0, \nabla I)$ where $I = \log(1 + \rho/\rho_0)$ [Conde Ruler] and Conde Triangle mapping, recovering $\Lambda$CDM when $\vert{}\nabla I\vert{} \to 0$ [@scolnic2022]. Code archived as 10.5281/zenodo.22849189.
 
 # Statement of need
 
 Researchers need fast, transparent tools to test vacuum phenomenology for SPARC, JWST CEERS, Pantheon+ without full Boltzmann solvers. ENGINE provides lightweight Python + Numba kernels, open-data loaders, and first tests showing $H_0 = 69.8 \pm 1.2$ km/s/Mpc.
 
-# State of the field
-
-Boltzmann solvers like CLASS/CAMB are accurate but heavy for phenomenological vacuum tests. Existing emulators focus on $\Lambda$CDM extensions. ENGINE is complementary: a minimal, explainable mapping $I$ and $\nabla I$ → $\Lambda_{\rm eff}$ for rotation curves and Hubble diagram checks.
-
-# Software design
-
-- `engine.core.conde_ruler`: $I$ and $\nabla I$
-- `engine.core.conde_triangle`: $f(|\nabla I|)$
-- `engine.cosmology.background`: $H(z)$ with $\Lambda_{\rm eff}$
-- `engine.data`: SPARC, CEERS, Pantheon+ loaders
-
-Implemented in Python 3.10+ with Numba for performance, no heavy dependencies.
-
-# Research impact statement
-
-Designed for reproducible tests across SPARC (2016), CEERS DR, and Pantheon+SH0ES. Target TRL 3-4 (prototype validation). Intended for MNRAS methods and community reuse for vacuum dynamics studies.
-
-# AI usage disclosure
-
-No generative AI was used for core scientific logic. AI tools were used for documentation editing and template scaffolding, verified by the author.
-
 # Installation
 
 ```bash
-pip install -e.
+pip install -e .
 python examples/basic_run.py
+---
+
+### 2. Métodos para Converter para PDF
+
+#### Método A: Pelo Navegador (Sem instalar software adicional)
+1. Abra o ficheiro `.html` original em qualquer navegador (Chrome, Firefox, Edge, Safari).
+2. Pressione `Ctrl + P` (Windows/Linux) ou `Cmd + P` (macOS).
+3. No destino da impressora, selecione **"Guardar como PDF"**.
+4. Ajuste as margens se necessário e clique em **Guardar**.
+
+#### Método B: Via Pandoc (Formatação Académica / JOSS)
+Se pretender gerar o PDF com o modelo oficial de publicação científica, utilize o **Pandoc** no terminal:
+
+```bash
+pandoc paper.md -o paper.pdf --pdf-engine=xelatex
