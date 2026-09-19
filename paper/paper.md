@@ -25,3 +25,28 @@ Researchers need fast, transparent tools to test vacuum phenomenology for SPARC,
 ```bash
 pip install -e .
 python examples/basic_run.py
+# State of the field
+
+Boltzmann solvers like CLASS/CAMB are accurate but heavy for phenomenological vacuum tests. ENGINE is complementary: a minimal, explainable mapping $I$ and $\nabla I \rightarrow \Lambda_{\rm eff}$.
+
+# Software design
+
+- `engine.core.conde_ruler`: $I$ and $\nabla I$
+- `engine.core.conde_triangle`: $f(|\nabla I|)$
+- `engine.cosmology.background`: $H(z)$ with $\Lambda_{\rm eff}$
+- `engine.data`: SPARC, CEERS, Pantheon+ loaders
+Implemented in Python 3.10+ with Numba.
+
+# Research impact statement
+
+Designed for reproducible tests across SPARC (2016), CEERS DR, and Pantheon+SH0ES. Target TRL 3-4.
+
+# AI usage disclosure
+
+No generative AI was used for core scientific logic. AI tools were used for documentation editing, verified by the author.
+
+# Acknowledgements
+
+SPARC, CEERS, Pantheon+ open-data communities.
+
+# References
